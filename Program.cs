@@ -14,8 +14,31 @@ void RawStrings()
     Console.WriteLine("** End raw string literals **");
 }
 
+void PrintMenu()
+{
+    Console.WriteLine();
+    Console.Write(
+        """
+        Menu:
+            1.- Raw strings
+            0.- Exit
+        Option:
+        """);
+}
 
-RawStrings();
+string? option;
+
+do
+{
+    PrintMenu();
+    option = Console.ReadLine();
+    switch (option)
+    {
+        case "1":
+            RawStrings();
+            break;
+    }
+} while (option != "0");
 
 Console.WriteLine("End");
 Console.ReadLine();
