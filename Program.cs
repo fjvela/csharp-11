@@ -1,5 +1,24 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello human!");
+void SimplifiedParameterNullValidationCode()
+{
+    Console.WriteLine("** Simplified parameter null validation code (!!) **");
+
+    void MyAwesomeMethod(string mystring!!)
+    {
+    }
+
+    try
+    {
+        MyAwesomeMethod(null);
+    }
+    catch (ArgumentException)
+    {
+        Console.WriteLine("Simplified parameter null validation code (!!): ex catched");
+    }
+
+    Console.WriteLine("** End Simplified parameter null validation code (!!) **");
+}
 
 void RawStrings()
 {
@@ -21,8 +40,9 @@ void PrintMenu()
         """
         Menu:
             1.- Raw strings
+            2.- Simplified parameter null validation code (!!)
             0.- Exit
-        Option:
+        Option: 
         """);
 }
 
@@ -37,8 +57,8 @@ do
         case "1":
             RawStrings();
             break;
+        case "2":
+            SimplifiedParameterNullValidationCode();
+            break;
     }
 } while (option != "0");
-
-Console.WriteLine("End");
-Console.ReadLine();
