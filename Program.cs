@@ -7,6 +7,11 @@ void SimplifiedParameterNullValidationCode()
     void MyAwesomeMethod(string mystring!!)
     {
     }
+    
+    void WarnCase<T>(
+        string? name!!,     // CS8995 Nullable type 'string?' is null-checked and will throw if null. 
+        T value1!!          // Okay
+     ){ }
 
     try
     {
